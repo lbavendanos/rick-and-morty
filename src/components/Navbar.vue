@@ -21,19 +21,19 @@
           :to="{ name: 'character' }"
           class="nav-item mr-5 hover:text-gray-900"
         >
-          Character
+          Characters
         </router-link>
         <router-link
           :to="{ name: 'location' }"
           class="nav-item mr-5 hover:text-gray-900"
         >
-          Location
+          Locations
         </router-link>
         <router-link
           :to="{ name: 'episode' }"
           class="nav-item mr-5 hover:text-gray-900"
         >
-          Episode
+          Episodes
         </router-link>
       </nav>
     </div>

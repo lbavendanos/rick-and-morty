@@ -26,13 +26,16 @@ describe('Navbar.vue', () => {
     expect(title.text()).toBe('Rick and Morty')
   })
 
-  it('render items', () => {
+  it('render items', async () => {
     const wrapper = wrapperFactory()
-    const navItems = wrapper.findAll('nav>.nav-item')
+    const items = wrapper.findAll('nav>.nav-item')
 
-    expect(navItems).toHaveLength(3)
-    expect(navItems[0].text()).toBe('Character')
-    expect(navItems[1].text()).toBe('Location')
-    expect(navItems[2].text()).toBe('Episode')
+    expect(items).toHaveLength(3)
+    expect(items[0].text()).toBe('Characters')
+    expect(items[0].attributes('href')).toBe('/characters')
+    expect(items[1].text()).toBe('Locations')
+    expect(items[1].attributes('href')).toBe('/locations')
+    expect(items[2].text()).toBe('Episodes')
+    expect(items[2].attributes('href')).toBe('/episodes')
   })
 })

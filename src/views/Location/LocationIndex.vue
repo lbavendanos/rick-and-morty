@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-5">
-    <h1 class="text-center">This is an location page</h1>
+    <h1 class="text-center">This is an Locations page</h1>
   </div>
 </template>
 

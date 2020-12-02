@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-5">
-    <h1 class="text-center">This is an character page</h1>
+    <h1 class="text-center">This is an Characters page</h1>
   </div>
 </template>
 
