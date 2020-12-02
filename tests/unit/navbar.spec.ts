@@ -1,23 +1,33 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
+import router from '@/router'
 import Navbar from '@/components/Navbar.vue'
+
+function wrapperFactory(options = {}) {
+  return mount(Navbar, {
+    global: {
+      plugins: [router]
+    },
+    ...options
+  })
+}
 
 describe('Navbar.vue', () => {
   it('render logo', () => {
-    const wrapper = shallowMount(Navbar)
+    const wrapper = wrapperFactory()
     const logo = wrapper.find('.logo>svg')
 
     expect(logo.exists()).toBe(true)
   })
 
   it('render title', () => {
-    const wrapper = shallowMount(Navbar)
+    const wrapper = wrapperFactory()
     const title = wrapper.get('.title')
 
     expect(title.text()).toBe('Rick and Morty')
   })
 
   it('render items', () => {
-    const wrapper = shallowMount(Navbar)
+    const wrapper = wrapperFactory()
     const navItems = wrapper.findAll('nav>.nav-item')
 
     expect(navItems).toHaveLength(3)
