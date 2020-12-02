@@ -4,25 +4,62 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
   },
   {
-    path: '/character',
+    path: '/characters',
     name: 'character',
+    redirect: { name: 'character.index' },
     component: () =>
-      import(/* webpackChunkName: "character" */ '../views/Character.vue')
+      import(
+        /* webpackChunkName: "character" */ '@/views/Character/Character.vue'
+      ),
+    children: [
+      {
+        path: '',
+        name: 'character.index',
+        component: () =>
+          import(
+            /* webpackChunkName: "character-index" */ '@/views/Character/CharacterIndex.vue'
+          )
+      }
+    ]
   },
   {
-    path: '/location',
+    path: '/locations',
     name: 'location',
+    redirect: { name: 'location.index' },
     component: () =>
-      import(/* webpackChunkName: "location" */ '../views/Location.vue')
+      import(
+        /* webpackChunkName: "location" */ '@/views/Location/Location.vue'
+      ),
+    children: [
+      {
+        path: '',
+        name: 'location.index',
+        component: () =>
+          import(
+            /* webpackChunkName: "location-index" */ '@/views/Location/LocationIndex.vue'
+          )
+      }
+    ]
   },
   {
-    path: '/episode',
+    path: '/episodes',
     name: 'episode',
+    redirect: { name: 'episode.index' },
     component: () =>
-      import(/* webpackChunkName: "Episode" */ '../views/Episode.vue')
+      import(/* webpackChunkName: "episode" */ '@/views/Episode/Episode.vue'),
+    children: [
+      {
+        path: '',
+        name: 'episode.index',
+        component: () =>
+          import(
+            /* webpackChunkName: "episode-index" */ '@/views/Episode/EpisodeIndex.vue'
+          )
+      }
+    ]
   }
 ]
 

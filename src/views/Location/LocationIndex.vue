@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-5">
-    <h1 class="text-center">This is an episode page</h1>
+    <h1 class="text-center">This is an location page</h1>
   </div>
 </template>
 
@@ -8,6 +8,6 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'Episode'
+  name: 'LocationIndex'
 })
 </script>
