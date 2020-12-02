@@ -1,9 +1,10 @@
 <template>
-  <header class="text-gray-700">
+  <header class="sticky top-0 bg-white text-gray-700 border-b-2 border-gray-50">
     <div
       class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
-      <a
+      <router-link
+        :to="{ name: 'home' }"
         class="logo flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
       >
         <svg width="40" height="40" viewBox="0 0 50 50" class="fill-current">
@@ -12,13 +13,28 @@
           ></path>
         </svg>
         <span class="title ml-3 text-xl">Rick and Morty</span>
-      </a>
+      </router-link>
       <nav
         class="md:ml-auto flex flex-wrap items-center text-base justify-center"
       >
-        <a class="nav-item mr-5 hover:text-gray-900">Character</a>
-        <a class="nav-item mr-5 hover:text-gray-900">Location</a>
-        <a class="nav-item mr-5 hover:text-gray-900">Episode</a>
+        <router-link
+          :to="{ name: 'character' }"
+          class="nav-item mr-5 hover:text-gray-900"
+        >
+          Character
+        </router-link>
+        <router-link
+          :to="{ name: 'location' }"
+          class="nav-item mr-5 hover:text-gray-900"
+        >
+          Location
+        </router-link>
+        <router-link
+          :to="{ name: 'episode' }"
+          class="nav-item mr-5 hover:text-gray-900"
+        >
+          Episode
+        </router-link>
       </nav>
     </div>
   </header>

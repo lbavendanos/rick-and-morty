@@ -1,13 +1,11 @@
 <template>
-  <!-- <div class=""> -->
-  <Navbar />
-  <Footer />
-  <!-- </div> -->
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="flex flex-col min-h-screen">
+    <Navbar />
+    <div class="main">
+      <router-view />
+    </div>
+    <Footer class="mt-auto" />
   </div>
-  <router-view /> -->
 </template>
 
 <script lang="ts">
@@ -23,5 +21,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style></style>
