@@ -14,21 +14,46 @@
   <div class="container mx-auto">
     <FormSearch @submit="onSubmit" />
   </div>
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+      <div
+        v-for="character in characters"
+        :key="character.id"
+        class="p-4 md:w-1/4"
+      >
+        <Card
+          type="CHARACTER"
+          :name="character.name"
+          :description="`${character.species} - ${character.status}`"
+          :image="character.image"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import FormSearch, { FormSearchData } from '@/components/FormSearch.vue'
+import Card from '@/components/Card.vue'
+import { Character, fetchCharacters } from '@/api/characters'
 
 export default defineComponent({
   name: 'CharacterIndex',
-  components: { FormSearch },
+  components: { FormSearch, Card },
   setup() {
+    const characters = ref<Character[]>([])
+
     const onSubmit = (formData: FormSearchData) => {
       console.log(formData)
     }
 
-    return { onSubmit }
+    onMounted(async () => {
+      const { results } = await fetchCharacters()
+      characters.value = results
+    })
+
+    return { onSubmit, characters }
   }
 })
 </script>
