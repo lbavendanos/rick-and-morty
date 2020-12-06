@@ -35,16 +35,14 @@
 import { defineComponent, reactive } from 'vue'
 
 export interface FormSearchData {
-  search: string | null
+  search?: string
 }
 
 export default defineComponent({
   name: 'FormSearch',
   emits: ['submit'],
   setup(props, ctx) {
-    const form = reactive<FormSearchData>({
-      search: null
-    })
+    const form = reactive<FormSearchData>({})
 
     const onSubmit = () => {
       ctx.emit('submit', form)

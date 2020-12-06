@@ -44,8 +44,10 @@ export default defineComponent({
   setup() {
     const characters = ref<Character[]>([])
 
-    const onSubmit = (formData: FormSearchData) => {
-      console.log(formData)
+    const onSubmit = async (formData: FormSearchData) => {
+      const name = formData.search
+      const { results } = await fetchCharacters(name)
+      characters.value = results
     }
 
     onMounted(async () => {
