@@ -37,15 +37,14 @@ interface Location {
   url: string
 }
 
-const baseConfig = {
+export const baseConfig: AxiosRequestConfig = {
   baseURL: 'https://rickandmortyapi.com/api'
 }
+export const url = '/character'
 
-export async function fetchCharacters(
-  config?: AxiosRequestConfig
-): Promise<Response> {
-  const url = '/character'
-  const { data } = await axios.get<Response>(url, { ...baseConfig, ...config })
+export async function fetchCharacters(name?: string): Promise<Response> {
+  const config = { ...baseConfig, ...(name ? { params: { name } } : {}) }
+  const { data } = await axios.get<Response>(url, config)
 
   return data
 }
