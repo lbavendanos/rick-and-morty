@@ -1,5 +1,24 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Card from '@/components/Card.vue'
+import {
+  createRouter,
+  createWebHistory,
+  RouteLocationRaw,
+  RouteRecordRaw
+} from 'vue-router'
+
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    name: 'card',
+    component: Card
+  }
+]
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
 
 interface MockData {
   type: string
@@ -16,7 +35,10 @@ const mockData: MockData = {
 }
 
 function wrapperFactory(options = {}) {
-  return shallowMount(Card, {
+  return mount(Card, {
+    global: {
+      plugins: [router]
+    },
     props: mockData,
     ...options
   })
@@ -53,5 +75,41 @@ describe('Card.vue', () => {
     expect(cardName.text()).toBe(mockData.name)
     expect(cardType.text()).toBe(mockData.type)
     expect(cardDescription.text()).toBe(mockData.description)
+  })
+
+  it('render learn more link with "href" prop', async () => {
+    const wrapper = wrapperFactory()
+    const href = '/foo/bar'
+
+    await wrapper.setProps({ href })
+
+    const card = wrapper.find('.card')
+    const cardAction = card.find('.card-actions')
+
+    expect(cardAction.exists()).toBe(true)
+
+    const cardLink = card.find('.card-link')
+
+    expect(cardLink.exists()).toBe(true)
+    expect(cardLink.attributes('href')).toBe(href)
+  })
+
+  it('render learn more link with "to" prop', async () => {
+    const wrapper = wrapperFactory()
+    const { name } = routes[0]
+    const { path } = routes[0]
+    const to: RouteLocationRaw = { name }
+
+    await wrapper.setProps({ to })
+
+    const card = wrapper.find('.card')
+    const cardAction = card.find('.card-actions')
+
+    expect(cardAction.exists()).toBe(true)
+
+    const cardLink = card.find('.card-link')
+
+    expect(cardLink.exists()).toBe(true)
+    expect(cardLink.attributes('href')).toBe(path)
   })
 })

@@ -18,6 +18,22 @@
         <p class="card-description leading-relaxed mb-3">
           {{ description }}
         </p>
+        <div v-if="to || href" class="card-actions flex items-center flex-wrap">
+          <router-link
+            v-if="to"
+            :to="to"
+            class="card-link text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+          >
+            Learn More
+          </router-link>
+          <a
+            v-if="href"
+            :href="href"
+            class="card-link text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+          >
+            Learn More
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -44,6 +60,14 @@ export default defineComponent({
     description: {
       type: String,
       required: true
+    },
+    href: {
+      type: String,
+      default: null
+    },
+    to: {
+      type: [String, Object],
+      default: null
     }
   }
 })
