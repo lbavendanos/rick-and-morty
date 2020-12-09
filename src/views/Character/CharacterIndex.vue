@@ -19,7 +19,7 @@
       <div
         v-for="character in characters"
         :key="character.id"
-        class="p-4 md:w-1/4"
+        class="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
       >
         <Card
           type="CHARACTER"
