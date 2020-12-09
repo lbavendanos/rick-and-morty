@@ -1,5 +1,7 @@
 <template>
-  <header class="sticky top-0 bg-white text-gray-700 border-b-2 border-gray-50">
+  <header
+    class="sticky z-40 top-0 bg-white text-gray-700 border-b-2 border-gray-50"
+  >
     <div
       class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
