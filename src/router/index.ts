@@ -22,6 +22,14 @@ const routes: Array<RouteRecordRaw> = [
           import(
             /* webpackChunkName: "character-index" */ '@/views/Character/CharacterIndex.vue'
           )
+      },
+      {
+        path: ':id',
+        name: 'character.show',
+        component: () =>
+          import(
+            /* webpackChunkName: "character-show" */ '@/views/Character/CharacterShow.vue'
+          )
       }
     ]
   },

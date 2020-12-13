@@ -23,6 +23,7 @@
       >
         <Card
           type="CHARACTER"
+          :to="{ name: 'character.show', params: { id: character.id } }"
           :name="character.name"
           :description="`${character.species} - ${character.status}`"
           :image="character.image"
