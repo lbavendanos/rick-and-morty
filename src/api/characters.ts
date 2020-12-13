@@ -40,11 +40,18 @@ interface Location {
 export const baseConfig: AxiosRequestConfig = {
   baseURL: 'https://rickandmortyapi.com/api'
 }
-export const url = '/character'
+export const URL = '/character'
 
 export async function fetchCharacters(name?: string): Promise<Response> {
   const config = { ...baseConfig, ...(name ? { params: { name } } : {}) }
-  const { data } = await axios.get<Response>(url, config)
+  const { data } = await axios.get<Response>(URL, config)
+
+  return data
+}
+
+export async function fetchCharacter(id: number): Promise<Character> {
+  const URL_ID = `${URL}/${id}`
+  const { data } = await axios.get<Character>(URL_ID, baseConfig)
 
   return data
 }
