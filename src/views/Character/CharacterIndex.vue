@@ -14,49 +14,34 @@
   <div class="container mx-auto">
     <FormSearch @submit="onSubmit" />
   </div>
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -m-4">
-      <div
-        v-for="character in characters"
-        :key="character.id"
-        class="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
-      >
-        <Card
-          type="CHARACTER"
-          :to="{ name: 'character.show', params: { id: character.id } }"
-          :name="character.name"
-          :description="`${character.species} - ${character.status}`"
-          :image="character.image"
-        />
+  <Suspense>
+    <template #default>
+      <Characters :name="name" />
+    </template>
+    <template #fallback>
+      <div class="container px-5 py-24 mx-auto">
+        <p class="text-center">Loading...</p>
       </div>
-    </div>
-  </div>
+    </template>
+  </Suspense>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, ref } from 'vue'
 import FormSearch, { FormSearchData } from '@/components/FormSearch.vue'
-import Card from '@/components/Card.vue'
-import { Character, fetchCharacters } from '@/api/characters'
+import Characters from '@/components/Sections/Character/Characters.vue'
 
 export default defineComponent({
   name: 'CharacterIndex',
-  components: { FormSearch, Card },
+  components: { FormSearch, Characters },
   setup() {
-    const characters = ref<Character[]>([])
+    const name = ref<string>()
 
-    const onSubmit = async (formData: FormSearchData) => {
-      const name = formData.search
-      const { results } = await fetchCharacters(name)
-      characters.value = results
+    const onSubmit = (formData: FormSearchData) => {
+      name.value = formData.search
     }
 
-    onMounted(async () => {
-      const { results } = await fetchCharacters()
-      characters.value = results
-    })
-
-    return { onSubmit, characters }
+    return { onSubmit, name }
   }
 })
 </script>

@@ -1,16 +1,25 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import CharacterIndex from '@/views/Character/CharacterIndex.vue'
+
+function wrapperFactory(options = {}) {
+  return mount(CharacterIndex, {
+    global: {
+      stubs: ['Characters']
+    },
+    ...options
+  })
+}
 
 describe('CharacterIndex.vue', () => {
   it('render title', () => {
-    const wrapper = shallowMount(CharacterIndex)
+    const wrapper = wrapperFactory()
     const title = wrapper.get('.title')
 
     expect(title.text()).toBe('CHARACTERS')
   })
 
   it('render subtitle', () => {
-    const wrapper = shallowMount(CharacterIndex)
+    const wrapper = wrapperFactory()
     const subtitle = wrapper.get('.subtitle')
 
     expect(subtitle.text()).toBe(
