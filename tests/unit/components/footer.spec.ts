@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import Footer from '@/components/Footer.vue'
 
 describe('Footer.vue', () => {
-  it('render cretor', () => {
+  it('render creator', () => {
     const wrapper = shallowMount(Footer)
     const logo = wrapper.get('.creator')
 
