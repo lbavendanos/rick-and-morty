@@ -41,11 +41,11 @@ export interface FormSearchData {
 export default defineComponent({
   name: 'FormSearch',
   emits: ['submit'],
-  setup(props, ctx) {
+  setup(props, { emit }) {
     const form = reactive<FormSearchData>({})
 
     const onSubmit = () => {
-      ctx.emit('submit', form)
+      emit('submit', form)
     }
 
     return { form, onSubmit }
