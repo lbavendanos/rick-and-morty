@@ -11,7 +11,7 @@
           :to="{ name: 'character.show', params: { id: character.id } }"
           :name="character.name"
           :description="`${character.species} - ${character.status}`"
-          :image="character.image"
+          :image="{ src: character.image, alt: character.name }"
         />
       </div>
     </div>

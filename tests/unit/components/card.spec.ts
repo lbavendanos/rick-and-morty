@@ -1,4 +1,5 @@
-import { mount } from '@vue/test-utils'
+import { render, screen } from '@testing-library/vue'
+import '@testing-library/jest-dom'
 import Card from '@/components/Card.vue'
 import {
   createRouter,
@@ -6,110 +7,102 @@ import {
   RouteLocationRaw,
   RouteRecordRaw
 } from 'vue-router'
+import { defineComponent } from 'vue'
+import { Image } from '@/types'
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'card',
-    component: Card
-  }
-]
-
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
-
-interface MockData {
+interface MockProps {
   type: string
-  image: string
+  image: Image
   name: string
   description: string
+  href?: string
+  to?: RouteLocationRaw
 }
 
-const mockData: MockData = {
-  type: 'CHARACTER',
-  image: 'rick-and-morty.png',
-  name: 'Rick and Morty',
-  description: 'Rick and Morty the best serie'
-}
-
-function wrapperFactory(options = {}) {
-  return mount(Card, {
-    global: {
-      plugins: [router]
+function getMockProps(): MockProps {
+  return {
+    type: 'CHARACTER',
+    image: {
+      src: 'http://placeimg.com/640/480',
+      alt: 'Character name'
     },
-    props: mockData,
-    ...options
-  })
+    name: 'Archie Hartmann',
+    description: 'Dolorum odit a.'
+  }
 }
 
 describe('Card.vue', () => {
-  it('render structure', () => {
-    const wrapper = wrapperFactory()
-    const card = wrapper.find('.card')
+  it('render props', () => {
+    const mockProps = getMockProps()
 
-    expect(card.exists()).toBe(true)
+    render(Card, {
+      global: {
+        stubs: ['router-link']
+      },
+      props: mockProps
+    })
 
-    const cardImage = card.find('.card-image')
-    const cardName = card.find('.card-name')
-    const cardType = card.find('.card-type')
-    const cardDescription = card.find('.card-description')
+    const type = screen.getByText(mockProps.type)
+    const image = screen.getByAltText(mockProps.image.alt)
+    const name = screen.getByText(mockProps.name)
+    const description = screen.getByText(mockProps.description)
 
-    expect(cardImage.exists()).toBe(true)
-    expect(cardName.exists()).toBe(true)
-    expect(cardType.exists()).toBe(true)
-    expect(cardDescription.exists()).toBe(true)
+    expect(type).toBeInTheDocument()
+    expect(image).toBeInTheDocument()
+    expect(name).toBeInTheDocument()
+    expect(description).toBeInTheDocument()
   })
 
-  it('sets the value', () => {
-    const wrapper = wrapperFactory()
+  it('render learn more link with "href" prop', () => {
+    const baseMockProps = getMockProps()
+    const mockProps: MockProps = { ...baseMockProps, href: '/foo' }
 
-    const card = wrapper.find('.card')
-    const cardImage = card.find('.card-image')
-    const cardName = card.find('.card-name')
-    const cardType = card.find('.card-type')
-    const cardDescription = card.find('.card-description')
+    render(Card, {
+      global: {
+        stubs: ['router-link']
+      },
+      props: mockProps
+    })
 
-    expect(cardImage.attributes('src')).toBe(mockData.image)
-    expect(cardName.text()).toBe(mockData.name)
-    expect(cardType.text()).toBe(mockData.type)
-    expect(cardDescription.text()).toBe(mockData.description)
-  })
+    const buttonLink = screen.getByRole('button')
 
-  it('render learn more link with "href" prop', async () => {
-    const wrapper = wrapperFactory()
-    const href = '/foo/bar'
-
-    await wrapper.setProps({ href })
-
-    const card = wrapper.find('.card')
-    const cardAction = card.find('.card-actions')
-
-    expect(cardAction.exists()).toBe(true)
-
-    const cardLink = card.find('.card-link')
-
-    expect(cardLink.exists()).toBe(true)
-    expect(cardLink.attributes('href')).toBe(href)
+    expect(buttonLink).toBeInTheDocument()
+    expect(buttonLink?.getAttribute('href')).toBe(mockProps.href)
   })
 
   it('render learn more link with "to" prop', async () => {
-    const wrapper = wrapperFactory()
-    const { name } = routes[0]
-    const { path } = routes[0]
-    const to: RouteLocationRaw = { name }
+    const SomeComponent = defineComponent({
+      name: 'SomeComponent'
+    })
 
-    await wrapper.setProps({ to })
+    const routeRecordRaw: RouteRecordRaw = {
+      path: '/',
+      name: 'someComponent',
+      component: SomeComponent
+    }
 
-    const card = wrapper.find('.card')
-    const cardAction = card.find('.card-actions')
+    const router = createRouter({
+      history: createWebHistory(process.env.BASE_URL),
+      routes: [routeRecordRaw]
+    })
 
-    expect(cardAction.exists()).toBe(true)
+    router.push('/')
+    await router.isReady()
 
-    const cardLink = card.find('.card-link')
+    const to = { name: routeRecordRaw.name }
+    const baseMockProps = getMockProps()
+    const mockProps: MockProps = { ...baseMockProps, to }
 
-    expect(cardLink.exists()).toBe(true)
-    expect(cardLink.attributes('href')).toBe(path)
+    render(Card, {
+      global: {
+        plugins: [router]
+      },
+      props: mockProps
+    })
+
+    const buttonLink = screen.getByRole('button')
+
+    expect(buttonLink).toBeInTheDocument()
+    expect(buttonLink?.getAttribute('href')).toBe(routeRecordRaw.path)
   })
 })

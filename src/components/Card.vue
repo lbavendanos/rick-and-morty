@@ -3,8 +3,8 @@
     <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
       <img
         class="card-image lg:h-48 md:h-36 w-full object-cover object-center"
-        :src="image"
-        alt="blog"
+        :src="image.src"
+        :alt="image.alt"
       />
       <div class="p-6">
         <h2
@@ -23,6 +23,7 @@
             v-if="to"
             :to="to"
             class="card-link text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+            role="button"
           >
             Learn More
           </router-link>
@@ -30,6 +31,7 @@
             v-if="href"
             :href="href"
             class="card-link text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+            role="button"
           >
             Learn More
           </a>
@@ -42,6 +44,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { RouteLocationRaw } from 'vue-router'
+import { Image } from '@/types'
 
 export default defineComponent({
   name: 'Card',
@@ -51,8 +54,9 @@ export default defineComponent({
       required: true
     },
     image: {
-      type: String,
-      required: true
+      type: Object as PropType<Image>,
+      required: true,
+      validator: (image: Image) => !!image.src && !!image.alt
     },
     name: {
       type: String,
