@@ -1,41 +1,27 @@
-import { mount } from '@vue/test-utils'
+import { render, screen } from '@testing-library/vue'
+import '@testing-library/jest-dom'
 import router from '@/router'
 import Navbar from '@/components/Navbar.vue'
 
-function wrapperFactory(options = {}) {
-  return mount(Navbar, {
-    global: {
-      plugins: [router]
-    },
-    ...options
-  })
-}
-
 describe('Navbar.vue', () => {
-  it('render logo', () => {
-    const wrapper = wrapperFactory()
-    const logo = wrapper.find('.logo>svg')
+  it('render title and navigation', async () => {
+    router.push('/')
+    await router.isReady()
 
-    expect(logo.exists()).toBe(true)
-  })
+    render(Navbar, {
+      global: {
+        plugins: [router]
+      }
+    })
 
-  it('render title', () => {
-    const wrapper = wrapperFactory()
-    const title = wrapper.get('.title')
+    const title = screen.getByText('Rick and Morty')
+    const characters = screen.getByText(/characters/i)
+    const locations = screen.getByText(/locations/i)
+    const episodes = screen.getByText(/episodes/i)
 
-    expect(title.text()).toBe('Rick and Morty')
-  })
-
-  it('render items', async () => {
-    const wrapper = wrapperFactory()
-    const items = wrapper.findAll('nav>.nav-item')
-
-    expect(items).toHaveLength(3)
-    expect(items[0].text()).toBe('Characters')
-    expect(items[0].attributes('href')).toBe('/characters')
-    expect(items[1].text()).toBe('Locations')
-    expect(items[1].attributes('href')).toBe('/locations')
-    expect(items[2].text()).toBe('Episodes')
-    expect(items[2].attributes('href')).toBe('/episodes')
+    expect(title).toBeInTheDocument()
+    expect(characters).toHaveAttribute('href', '/characters')
+    expect(locations).toHaveAttribute('href', '/locations')
+    expect(episodes).toHaveAttribute('href', '/episodes')
   })
 })
