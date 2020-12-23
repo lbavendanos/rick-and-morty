@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="container mx-auto">
-    <FormSearch @submit="onSubmit" />
+    <FilterForm @submit="onFilter" @cancel="onFilter" />
   </div>
   <Suspense>
     <template #default>
@@ -28,20 +28,21 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import FormSearch, { FormSearchData } from '@/components/FormSearch.vue'
+import FilterForm from '@/components/FilterForm.vue'
 import Characters from '@/components/Sections/Character/Characters.vue'
+import { FilterOptions } from '@/types'
 
 export default defineComponent({
   name: 'CharacterIndex',
-  components: { FormSearch, Characters },
+  components: { FilterForm, Characters },
   setup() {
     const name = ref<string>()
 
-    const onSubmit = (formData: FormSearchData) => {
-      name.value = formData.search
+    const onFilter = (filterOption: FilterOptions) => {
+      name.value = filterOption.keywords
     }
 
-    return { onSubmit, name }
+    return { name, onFilter }
   }
 })
 </script>

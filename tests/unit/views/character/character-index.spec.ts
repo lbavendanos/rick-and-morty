@@ -1,29 +1,21 @@
-import { mount } from '@vue/test-utils'
+import { render, screen } from '@testing-library/vue'
+import '@testing-library/jest-dom'
 import CharacterIndex from '@/views/Character/CharacterIndex.vue'
 
-function wrapperFactory(options = {}) {
-  return mount(CharacterIndex, {
-    global: {
-      stubs: ['Characters']
-    },
-    ...options
-  })
-}
-
 describe('CharacterIndex.vue', () => {
-  it('render title', () => {
-    const wrapper = wrapperFactory()
-    const title = wrapper.get('.title')
+  it('render title and subtitle', () => {
+    render(CharacterIndex, {
+      global: {
+        stubs: ['FilterForm', 'Characters']
+      }
+    })
 
-    expect(title.text()).toBe('CHARACTERS')
-  })
-
-  it('render subtitle', () => {
-    const wrapper = wrapperFactory()
-    const subtitle = wrapper.get('.subtitle')
-
-    expect(subtitle.text()).toBe(
+    const title = screen.getByText('CHARACTERS')
+    const subtitle = screen.getByText(
       'In this section you can search for a character'
     )
+
+    expect(title).toBeInTheDocument()
+    expect(subtitle).toBeInTheDocument()
   })
 })
