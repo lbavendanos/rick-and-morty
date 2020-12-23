@@ -1,11 +1,14 @@
-import { shallowMount } from '@vue/test-utils'
+import { render, screen } from '@testing-library/vue'
+import '@testing-library/jest-dom'
 import Footer from '@/components/Footer.vue'
 
 describe('Footer.vue', () => {
   it('render creator', () => {
-    const wrapper = shallowMount(Footer)
-    const logo = wrapper.get('.creator')
+    render(Footer)
 
-    expect(logo.text()).toBe('© 2020 lbavendanos')
+    const creator = '© 2020 lbavendanos'
+    const footer = screen.getByText(creator)
+
+    expect(footer).toBeInTheDocument()
   })
 })
