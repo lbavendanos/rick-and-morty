@@ -6,24 +6,31 @@
       <div class="flex flex-wrap -m-2">
         <div class="p-2 w-full">
           <div class="relative">
-            <label for="inputSearch" class="leading-7 text-sm text-gray-600">
-              Search
+            <label for="keywords" class="leading-7 text-sm text-gray-600">
+              Keywords
             </label>
             <input
               type="text"
-              id="inputSearch"
-              v-model="form.search"
-              name="search"
+              id="keywords"
+              v-model="form.keywords"
+              name="keywords"
               class="w-full rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
         </div>
-        <div class="p-2 w-full">
+        <div class="flex justify-center p-2 w-full">
           <button
             type="submit"
-            class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            class="mx-1 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
           >
-            Search
+            Ok
+          </button>
+          <button
+            type="button"
+            class="mx-1 text-white bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg"
+            @click.prevent="onCancel"
+          >
+            Cancel
           </button>
         </div>
       </div>
@@ -33,22 +40,24 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
-
-export interface FormSearchData {
-  search?: string
-}
+import { FilterOptions } from '@/types'
 
 export default defineComponent({
-  name: 'FormSearch',
-  emits: ['submit'],
+  name: 'FilterForm',
+  emits: ['submit', 'cancel'],
   setup(props, { emit }) {
-    const form = reactive<FormSearchData>({})
+    const form = reactive<FilterOptions>({})
 
     const onSubmit = () => {
       emit('submit', form)
     }
 
-    return { form, onSubmit }
+    const onCancel = () => {
+      form.keywords = ''
+      emit('cancel', form)
+    }
+
+    return { form, onSubmit, onCancel }
   }
 })
 </script>
