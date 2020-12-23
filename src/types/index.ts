@@ -1,4 +1,8 @@
-export interface Image {
+export interface ImageOptions {
   src: string
   alt: string
+}
+
+export interface FilterOptions {
+  keywords?: string
 }

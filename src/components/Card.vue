@@ -44,7 +44,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { RouteLocationRaw } from 'vue-router'
-import { Image } from '@/types'
+import { ImageOptions } from '@/types'
 
 export default defineComponent({
   name: 'Card',
@@ -54,9 +54,9 @@ export default defineComponent({
       required: true
     },
     image: {
-      type: Object as PropType<Image>,
+      type: Object as PropType<ImageOptions>,
       required: true,
-      validator: (image: Image) => !!image.src && !!image.alt
+      validator: (image: ImageOptions) => !!image.src && !!image.alt
     },
     name: {
       type: String,

@@ -8,11 +8,11 @@ import {
   RouteRecordRaw
 } from 'vue-router'
 import { defineComponent } from 'vue'
-import { Image } from '@/types'
+import { ImageOptions } from '@/types'
 
 interface MockProps {
   type: string
-  image: Image
+  image: ImageOptions
   name: string
   description: string
   href?: string
@@ -67,7 +67,7 @@ describe('Card.vue', () => {
     const buttonLink = screen.getByRole('button')
 
     expect(buttonLink).toBeInTheDocument()
-    expect(buttonLink?.getAttribute('href')).toBe(mockProps.href)
+    expect(buttonLink).toHaveAttribute('href', mockProps.href)
   })
 
   it('render learn more link with "to" prop', async () => {
@@ -103,6 +103,6 @@ describe('Card.vue', () => {
     const buttonLink = screen.getByRole('button')
 
     expect(buttonLink).toBeInTheDocument()
-    expect(buttonLink?.getAttribute('href')).toBe(routeRecordRaw.path)
+    expect(buttonLink).toHaveAttribute('href', routeRecordRaw.path)
   })
 })
