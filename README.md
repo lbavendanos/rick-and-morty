@@ -1,5 +1,5 @@
 # rick-and-morty
-This project was built with vue 3 and tdd
+This project is built with vue 3 and tdd
 
 ## Project setup
 
