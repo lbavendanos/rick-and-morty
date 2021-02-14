@@ -4,7 +4,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
   },
   {
     path: '/characters',
@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import(
             /* webpackChunkName: "character-index" */ '@/views/Character/CharacterIndex.vue'
-          )
+          ),
       },
       {
         path: ':id',
@@ -29,9 +29,9 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import(
             /* webpackChunkName: "character-show" */ '@/views/Character/CharacterShow.vue'
-          )
-      }
-    ]
+          ),
+      },
+    ],
   },
   {
     path: '/locations',
@@ -48,9 +48,9 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import(
             /* webpackChunkName: "location-index" */ '@/views/Location/LocationIndex.vue'
-          )
-      }
-    ]
+          ),
+      },
+    ],
   },
   {
     path: '/episodes',
@@ -65,15 +65,15 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import(
             /* webpackChunkName: "episode-index" */ '@/views/Episode/EpisodeIndex.vue'
-          )
-      }
-    ]
-  }
+          ),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 })
 
 export default router

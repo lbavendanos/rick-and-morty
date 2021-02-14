@@ -6,8 +6,8 @@ describe('CharacterIndex.vue', () => {
   it('render title and subtitle', () => {
     render(CharacterIndex, {
       global: {
-        stubs: ['FilterForm', 'Characters']
-      }
+        stubs: ['FilterForm', 'Characters'],
+      },
     })
 
     const title = screen.getByText('CHARACTERS')

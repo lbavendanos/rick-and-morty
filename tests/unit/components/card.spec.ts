@@ -5,7 +5,7 @@ import {
   createRouter,
   createWebHistory,
   RouteLocationRaw,
-  RouteRecordRaw
+  RouteRecordRaw,
 } from 'vue-router'
 import { defineComponent } from 'vue'
 import { ImageOptions } from '@/types'
@@ -24,10 +24,10 @@ function getMockProps(): MockProps {
     type: 'CHARACTER',
     image: {
       src: 'http://placeimg.com/640/480',
-      alt: 'Character name'
+      alt: 'Character name',
     },
     name: 'Archie Hartmann',
-    description: 'Dolorum odit a.'
+    description: 'Dolorum odit a.',
   }
 }
 
@@ -37,9 +37,9 @@ describe('Card.vue', () => {
 
     render(Card, {
       global: {
-        stubs: ['router-link']
+        stubs: ['router-link'],
       },
-      props: mockProps
+      props: mockProps,
     })
 
     const type = screen.getByText(mockProps.type)
@@ -59,9 +59,9 @@ describe('Card.vue', () => {
 
     render(Card, {
       global: {
-        stubs: ['router-link']
+        stubs: ['router-link'],
       },
-      props: mockProps
+      props: mockProps,
     })
 
     const buttonLink = screen.getByRole('button')
@@ -72,18 +72,18 @@ describe('Card.vue', () => {
 
   it('render learn more link with "to" prop', async () => {
     const SomeComponent = defineComponent({
-      name: 'SomeComponent'
+      name: 'SomeComponent',
     })
 
     const routeRecordRaw: RouteRecordRaw = {
       path: '/',
       name: 'someComponent',
-      component: SomeComponent
+      component: SomeComponent,
     }
 
     const router = createRouter({
       history: createWebHistory(process.env.BASE_URL),
-      routes: [routeRecordRaw]
+      routes: [routeRecordRaw],
     })
 
     router.push('/')
@@ -95,9 +95,9 @@ describe('Card.vue', () => {
 
     render(Card, {
       global: {
-        plugins: [router]
+        plugins: [router],
       },
-      props: mockProps
+      props: mockProps,
     })
 
     const buttonLink = screen.getByRole('button')

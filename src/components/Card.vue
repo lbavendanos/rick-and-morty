@@ -51,29 +51,29 @@ export default defineComponent({
   props: {
     type: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: Object as PropType<ImageOptions>,
       required: true,
-      validator: (image: ImageOptions) => !!image.src && !!image.alt
+      validator: (image: ImageOptions) => !!image.src && !!image.alt,
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      required: true
+      required: true,
     },
     href: {
       type: String,
-      default: null
+      default: null,
     },
     to: {
       type: Object as PropType<RouteLocationRaw>,
-      default: null
-    }
-  }
+      default: null,
+    },
+  },
 })
 </script>

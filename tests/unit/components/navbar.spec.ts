@@ -10,8 +10,8 @@ describe('Navbar.vue', () => {
 
     render(Navbar, {
       global: {
-        plugins: [router]
-      }
+        plugins: [router],
+      },
     })
 
     const title = screen.getByText('Rick and Morty')

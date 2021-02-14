@@ -29,15 +29,15 @@ export default defineComponent({
   props: {
     name: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   async setup(props) {
     const { characters, fetchCharacters } = useCharacters()
 
     watch<string>(
       () => props.name,
-      async value => {
+      async (value) => {
         await fetchCharacters(value)
       }
     )
@@ -45,6 +45,6 @@ export default defineComponent({
     await fetchCharacters()
 
     return { characters }
-  }
+  },
 })
 </script>

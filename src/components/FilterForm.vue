@@ -58,6 +58,6 @@ export default defineComponent({
     }
 
     return { form, onSubmit, onCancel }
-  }
+  },
 })
 </script>

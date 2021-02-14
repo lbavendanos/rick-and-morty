@@ -17,7 +17,7 @@ export default defineComponent({
   name: 'Home',
   components: {
     Navbar,
-    Footer
-  }
+    Footer,
+  },
 })
 </script>

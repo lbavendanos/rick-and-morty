@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import axios, { AxiosRequestConfig } from 'axios'
 
 const baseConfig: AxiosRequestConfig = {
-  baseURL: 'https://rickandmortyapi.com/api'
+  baseURL: 'https://rickandmortyapi.com/api',
 }
 
 export function useApiGet<T>() {

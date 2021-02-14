@@ -22,6 +22,6 @@ export default defineComponent({
     })
 
     return { character }
-  }
+  },
 })
 </script>

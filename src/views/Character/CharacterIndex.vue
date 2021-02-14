@@ -43,6 +43,6 @@ export default defineComponent({
     }
 
     return { name, onFilter }
-  }
+  },
 })
 </script>

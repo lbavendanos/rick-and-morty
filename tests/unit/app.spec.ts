@@ -4,9 +4,9 @@ import App from '@/App.vue'
 function wrapperFactory(options = {}) {
   return mount(App, {
     global: {
-      stubs: ['router-view', 'router-link']
+      stubs: ['router-view', 'router-link'],
     },
-    ...options
+    ...options,
   })
 }
 

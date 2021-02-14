@@ -2,7 +2,7 @@ import {
   useCharacters,
   useCharacter,
   Response,
-  Character
+  Character,
 } from '@/hooks/characters'
 import axios from 'axios'
 import { mockInfo, mockCharacters } from './characters-mock'

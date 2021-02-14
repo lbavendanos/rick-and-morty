@@ -16,7 +16,7 @@ export function getAxiosResponse<T>(data: T): AxiosResponse<T> {
     status: 200,
     statusText: 'Ok',
     headers: {},
-    config: {}
+    config: {},
   }
 }
 
@@ -27,7 +27,7 @@ export function getAxiosError(): AxiosError {
     message: 'Not found resource',
     name: 'AxiosError',
     toJSON: () => ({}),
-    code: '404'
+    code: '404',
   }
 }
 
@@ -39,7 +39,7 @@ describe('Api hooks', () => {
   it('call useApiGet hook to request data', async () => {
     const mockData: MockData = {
       company: 'Crooks, Schiller and Swaniawski',
-      country: 'Denmark'
+      country: 'Denmark',
     }
     const axiosResponse = getAxiosResponse(mockData)
 

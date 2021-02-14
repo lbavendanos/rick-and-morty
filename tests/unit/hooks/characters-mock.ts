@@ -4,7 +4,7 @@ export const mockInfo: Info = {
   count: 671,
   pages: 34,
   next: 'https://rickandmortyapi.com/api/character/?page=2',
-  prev: null
+  prev: null,
 }
 
 export const mockCharacters: Character[] = [
@@ -17,11 +17,11 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'Earth (C-137)',
-      url: 'https://rickandmortyapi.com/api/location/1'
+      url: 'https://rickandmortyapi.com/api/location/1',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     episode: [
@@ -65,10 +65,10 @@ export const mockCharacters: Character[] = [
       'https://rickandmortyapi.com/api/episode/38',
       'https://rickandmortyapi.com/api/episode/39',
       'https://rickandmortyapi.com/api/episode/40',
-      'https://rickandmortyapi.com/api/episode/41'
+      'https://rickandmortyapi.com/api/episode/41',
     ],
     url: 'https://rickandmortyapi.com/api/character/1',
-    created: '2017-11-04T18:48:46.250Z'
+    created: '2017-11-04T18:48:46.250Z',
   },
   {
     id: 2,
@@ -79,11 +79,11 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'Earth (C-137)',
-      url: 'https://rickandmortyapi.com/api/location/1'
+      url: 'https://rickandmortyapi.com/api/location/1',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
     episode: [
@@ -127,10 +127,10 @@ export const mockCharacters: Character[] = [
       'https://rickandmortyapi.com/api/episode/38',
       'https://rickandmortyapi.com/api/episode/39',
       'https://rickandmortyapi.com/api/episode/40',
-      'https://rickandmortyapi.com/api/episode/41'
+      'https://rickandmortyapi.com/api/episode/41',
     ],
     url: 'https://rickandmortyapi.com/api/character/2',
-    created: '2017-11-04T18:50:21.651Z'
+    created: '2017-11-04T18:50:21.651Z',
   },
   {
     id: 3,
@@ -141,11 +141,11 @@ export const mockCharacters: Character[] = [
     gender: 'Female',
     origin: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
     episode: [
@@ -181,10 +181,10 @@ export const mockCharacters: Character[] = [
       'https://rickandmortyapi.com/api/episode/38',
       'https://rickandmortyapi.com/api/episode/39',
       'https://rickandmortyapi.com/api/episode/40',
-      'https://rickandmortyapi.com/api/episode/41'
+      'https://rickandmortyapi.com/api/episode/41',
     ],
     url: 'https://rickandmortyapi.com/api/character/3',
-    created: '2017-11-04T19:09:56.428Z'
+    created: '2017-11-04T19:09:56.428Z',
   },
   {
     id: 4,
@@ -195,11 +195,11 @@ export const mockCharacters: Character[] = [
     gender: 'Female',
     origin: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
     episode: [
@@ -235,10 +235,10 @@ export const mockCharacters: Character[] = [
       'https://rickandmortyapi.com/api/episode/38',
       'https://rickandmortyapi.com/api/episode/39',
       'https://rickandmortyapi.com/api/episode/40',
-      'https://rickandmortyapi.com/api/episode/41'
+      'https://rickandmortyapi.com/api/episode/41',
     ],
     url: 'https://rickandmortyapi.com/api/character/4',
-    created: '2017-11-04T19:22:43.665Z'
+    created: '2017-11-04T19:22:43.665Z',
   },
   {
     id: 5,
@@ -249,11 +249,11 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
     episode: [
@@ -285,10 +285,10 @@ export const mockCharacters: Character[] = [
       'https://rickandmortyapi.com/api/episode/38',
       'https://rickandmortyapi.com/api/episode/39',
       'https://rickandmortyapi.com/api/episode/40',
-      'https://rickandmortyapi.com/api/episode/41'
+      'https://rickandmortyapi.com/api/episode/41',
     ],
     url: 'https://rickandmortyapi.com/api/character/5',
-    created: '2017-11-04T19:26:56.301Z'
+    created: '2017-11-04T19:26:56.301Z',
   },
   {
     id: 6,
@@ -299,16 +299,16 @@ export const mockCharacters: Character[] = [
     gender: 'Female',
     origin: {
       name: 'Abadango',
-      url: 'https://rickandmortyapi.com/api/location/2'
+      url: 'https://rickandmortyapi.com/api/location/2',
     },
     location: {
       name: 'Abadango',
-      url: 'https://rickandmortyapi.com/api/location/2'
+      url: 'https://rickandmortyapi.com/api/location/2',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/27'],
     url: 'https://rickandmortyapi.com/api/character/6',
-    created: '2017-11-04T19:50:28.250Z'
+    created: '2017-11-04T19:50:28.250Z',
   },
   {
     id: 7,
@@ -319,19 +319,19 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     location: {
       name: 'Testicle Monster Dimension',
-      url: 'https://rickandmortyapi.com/api/location/21'
+      url: 'https://rickandmortyapi.com/api/location/21',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
     episode: [
       'https://rickandmortyapi.com/api/episode/10',
-      'https://rickandmortyapi.com/api/episode/11'
+      'https://rickandmortyapi.com/api/episode/11',
     ],
     url: 'https://rickandmortyapi.com/api/character/7',
-    created: '2017-11-04T19:59:20.523Z'
+    created: '2017-11-04T19:59:20.523Z',
   },
   {
     id: 8,
@@ -342,16 +342,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'Citadel of Ricks',
-      url: 'https://rickandmortyapi.com/api/location/3'
+      url: 'https://rickandmortyapi.com/api/location/3',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/8.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/28'],
     url: 'https://rickandmortyapi.com/api/character/8',
-    created: '2017-11-04T20:03:34.737Z'
+    created: '2017-11-04T20:03:34.737Z',
   },
   {
     id: 9,
@@ -362,16 +362,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/9.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/24'],
     url: 'https://rickandmortyapi.com/api/character/9',
-    created: '2017-11-04T20:06:54.976Z'
+    created: '2017-11-04T20:06:54.976Z',
   },
   {
     id: 10,
@@ -382,16 +382,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: "Worldender's lair",
-      url: 'https://rickandmortyapi.com/api/location/4'
+      url: 'https://rickandmortyapi.com/api/location/4',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/10.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/25'],
     url: 'https://rickandmortyapi.com/api/character/10',
-    created: '2017-11-04T20:19:09.017Z'
+    created: '2017-11-04T20:19:09.017Z',
   },
   {
     id: 11,
@@ -402,16 +402,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'Earth (C-137)',
-      url: 'https://rickandmortyapi.com/api/location/1'
+      url: 'https://rickandmortyapi.com/api/location/1',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/11.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/12'],
     url: 'https://rickandmortyapi.com/api/character/11',
-    created: '2017-11-04T20:20:20.965Z'
+    created: '2017-11-04T20:20:20.965Z',
   },
   {
     id: 12,
@@ -422,16 +422,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'Earth (C-137)',
-      url: 'https://rickandmortyapi.com/api/location/1'
+      url: 'https://rickandmortyapi.com/api/location/1',
     },
     location: {
       name: 'Anatomy Park',
-      url: 'https://rickandmortyapi.com/api/location/5'
+      url: 'https://rickandmortyapi.com/api/location/5',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/12.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/3'],
     url: 'https://rickandmortyapi.com/api/character/12',
-    created: '2017-11-04T20:32:33.144Z'
+    created: '2017-11-04T20:32:33.144Z',
   },
   {
     id: 13,
@@ -442,16 +442,16 @@ export const mockCharacters: Character[] = [
     gender: 'unknown',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/13.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/31'],
     url: 'https://rickandmortyapi.com/api/character/13',
-    created: '2017-11-04T20:33:30.779Z'
+    created: '2017-11-04T20:33:30.779Z',
   },
   {
     id: 14,
@@ -462,16 +462,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'Citadel of Ricks',
-      url: 'https://rickandmortyapi.com/api/location/3'
+      url: 'https://rickandmortyapi.com/api/location/3',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/14.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/10'],
     url: 'https://rickandmortyapi.com/api/character/14',
-    created: '2017-11-04T20:51:31.373Z'
+    created: '2017-11-04T20:51:31.373Z',
   },
   {
     id: 15,
@@ -482,16 +482,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'Citadel of Ricks',
-      url: 'https://rickandmortyapi.com/api/location/3'
+      url: 'https://rickandmortyapi.com/api/location/3',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/15.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/10'],
     url: 'https://rickandmortyapi.com/api/character/15',
-    created: '2017-11-04T20:56:13.215Z'
+    created: '2017-11-04T20:56:13.215Z',
   },
   {
     id: 16,
@@ -502,16 +502,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20'
+      url: 'https://rickandmortyapi.com/api/location/20',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/16.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/15'],
     url: 'https://rickandmortyapi.com/api/character/16',
-    created: '2017-11-04T21:12:45.235Z'
+    created: '2017-11-04T21:12:45.235Z',
   },
   {
     id: 17,
@@ -522,16 +522,16 @@ export const mockCharacters: Character[] = [
     gender: 'Female',
     origin: {
       name: 'Earth (C-137)',
-      url: 'https://rickandmortyapi.com/api/location/1'
+      url: 'https://rickandmortyapi.com/api/location/1',
     },
     location: {
       name: 'Anatomy Park',
-      url: 'https://rickandmortyapi.com/api/location/5'
+      url: 'https://rickandmortyapi.com/api/location/5',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/17.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/3'],
     url: 'https://rickandmortyapi.com/api/character/17',
-    created: '2017-11-04T22:21:24.481Z'
+    created: '2017-11-04T22:21:24.481Z',
   },
   {
     id: 18,
@@ -542,19 +542,19 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'Citadel of Ricks',
-      url: 'https://rickandmortyapi.com/api/location/3'
+      url: 'https://rickandmortyapi.com/api/location/3',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/18.jpeg',
     episode: [
       'https://rickandmortyapi.com/api/episode/10',
-      'https://rickandmortyapi.com/api/episode/28'
+      'https://rickandmortyapi.com/api/episode/28',
     ],
     url: 'https://rickandmortyapi.com/api/character/18',
-    created: '2017-11-04T22:25:29.008Z'
+    created: '2017-11-04T22:25:29.008Z',
   },
   {
     id: 19,
@@ -565,16 +565,16 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/19.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/10'],
     url: 'https://rickandmortyapi.com/api/character/19',
-    created: '2017-11-04T22:28:13.756Z'
+    created: '2017-11-04T22:28:13.756Z',
   },
   {
     id: 20,
@@ -585,15 +585,15 @@ export const mockCharacters: Character[] = [
     gender: 'Male',
     origin: {
       name: 'unknown',
-      url: ''
+      url: '',
     },
     location: {
       name: 'Interdimensional Cable',
-      url: 'https://rickandmortyapi.com/api/location/6'
+      url: 'https://rickandmortyapi.com/api/location/6',
     },
     image: 'https://rickandmortyapi.com/api/character/avatar/20.jpeg',
     episode: ['https://rickandmortyapi.com/api/episode/8'],
     url: 'https://rickandmortyapi.com/api/character/20',
-    created: '2017-11-04T22:34:53.659Z'
-  }
+    created: '2017-11-04T22:34:53.659Z',
+  },
 ]
