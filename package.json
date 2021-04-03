@@ -16,7 +16,7 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@tailwindcss/postcss7-compat": "^2.0.4",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/vue": "^6.3.4",
     "@types/jest": "^26.0.20",
@@ -39,7 +39,7 @@
     "eslint-plugin-vue": "^7.0.0-0",
     "postcss": "^7.0.35",
     "prettier": "^2.2.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
   }
